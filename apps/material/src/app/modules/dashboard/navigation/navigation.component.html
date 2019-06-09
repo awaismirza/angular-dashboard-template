@@ -1,0 +1,68 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sideNavigation" fixedInViewport="true" mode="side" opened="true" position="start">
+    <mat-toolbar class="logo">
+      <mat-toolbar-row>
+        <span>Dashboard</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list class="navigation-list" class="nav-list-item">
+
+      <a *ngFor="let nav of navLinks" mat-list-item [routerLink]="nav.path">
+        <mat-icon class="nav-icon">{{nav.icon}}</mat-icon>
+        {{nav.label}}
+      </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav #notification class="notification" fixedInViewport="true"
+               mode="over"
+               closed position="end">
+
+    <mat-toolbar class="notification-toolbar">
+      <mat-label>Notifications</mat-label>
+      <span class="toolbar-spacer"></span>
+      <button mat-button (click)="notification.toggle()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-nav-list class="mat-nav-list">
+      <h3>Notification List Item</h3>
+    </mat-nav-list>
+  </mat-sidenav>
+
+
+
+  <mat-sidenav-content>
+    <mat-toolbar class="toolbar">
+
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"></button>
+       <mat-icon aria-label="Side nav toggle icon" (click)="drawer.toggle()">menu</mat-icon> 
+
+        <button mat-button (click)="notification.toggle()">
+            <mat-icon>notification_important</mat-icon>
+          </button>
+
+          <span class="toolbar-spacer"></span>
+          <span class="toolbar-spacer"></span>
+
+          <button mat-button [mat-menu-trigger-for]="menu">
+              <mat-icon>account_circle</mat-icon>
+              <mat-label>User</mat-label>
+          </button>
+
+          <mat-menu #menu="matMenu">
+              <button mat-menu-item routerLink="/">Profile</button>
+              <button mat-menu-item routerLink="/">Sign Out</button>
+            </mat-menu>
+
+    </mat-toolbar>
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+
+
+
+</mat-sidenav-container>

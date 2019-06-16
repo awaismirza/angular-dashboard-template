@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
 
+## Project Setup
+
+> Install NodeJS 8+ 
+> Run: npm install on terminal ( Mac / Linux ) / Command Prompt ( Windows ) 
+> Run: ng add @angular/material
+> Run: ng serve
+
+Enjoye !!
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

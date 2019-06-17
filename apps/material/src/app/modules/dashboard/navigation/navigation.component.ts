@@ -20,9 +20,8 @@ export class NavigationComponent implements OnInit {
 
   navLinks: Array<any> = [
     {icon: 'dashboard', path: '/dashboard/dashboard', label: 'Dashboard'},
-    {icon: 'home', path: '/dashboard/home', label: 'Home'},
-    {icon: 'event', path: '/dashboard/event', label: 'Event'},
-    {icon: 'account_circle', path: '/dashboard/profile', label: 'Profile'},
+    {icon: 'event', path: '/dashboard/drag', label: 'Drag Drop'},
+    {icon: 'event', path: '/dashboard/address', label: 'Address'},
   ]
 
 }

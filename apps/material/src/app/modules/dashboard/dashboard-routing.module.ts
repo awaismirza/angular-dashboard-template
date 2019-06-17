@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
 import { DashboardComponent } from './navigation/components/dashboard/dashboard.component';
-import { HomeComponent } from './navigation/components/home/home.component';
-import { EventComponent } from './navigation/components/event/event.component';
-import { ProfileComponent } from './navigation/components/profile/profile.component';
+
 import { PagenotfoundComponent } from '../../component/pagenotfound/pagenotfound.component';
+import { DragdropComponent } from './navigation/components/dragdrop/dragdrop.component';
+import { AddressComponent } from './navigation/components/address/address.component';
 
 const routes: Routes = [
   {
@@ -13,16 +13,17 @@ const routes: Routes = [
     component: NavigationComponent,
     children: [
       {
-        path: 'home',
-        component: HomeComponent
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+
+      {
+        path: 'drag',
+        component: DragdropComponent
       },
       {
-        path: 'event',
-        component: EventComponent
-      },
-      {
-        path: 'profile',
-        component: ProfileComponent
+        path: 'address',
+        component: AddressComponent
       },
       {
         path: '',

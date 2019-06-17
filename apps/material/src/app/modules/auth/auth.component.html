@@ -1,3 +1,18 @@
-<p>
-  I am in Auth Module
-</p>
+<mat-grid-list cols="2" rowHeight="100%">
+  <mat-grid-tile class="signup">
+      <div class="example-container">
+        <mat-form-field>
+          <input matInput placeholder="Enter your email"  required #email>
+          <mat-error *ngIf="email.invalid">Email is not Valid</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <mat-form-field>
+          <input matInput placeholder="Enter your Password" required #password>
+          <mat-error *ngIf="password.invalid">Password is NOt valid</mat-error>
+        </mat-form-field>
+      </div>
+      <button mat-button>Click me!</button>
+  </mat-grid-tile>
+  <mat-grid-tile class="login">2</mat-grid-tile>
+</mat-grid-list>

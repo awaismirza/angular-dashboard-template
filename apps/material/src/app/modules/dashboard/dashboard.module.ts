@@ -5,16 +5,34 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MaterialModule } from '../../material/material.module';
 import { DashboardComponent } from './navigation/components/dashboard/dashboard.component';
-import { HomeComponent } from './navigation/components/home/home.component';
-import { EventComponent } from './navigation/components/event/event.component';
-import { ProfileComponent } from './navigation/components/profile/profile.component';
+
+import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatTableModule, MatPaginatorModule, MatSortModule, MatInputModule, MatSelectModule, MatRadioModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+import { DragdropComponent } from './navigation/components/dragdrop/dragdrop.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AddressComponent } from './navigation/components/address/address.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [NavigationComponent, DashboardComponent, HomeComponent, EventComponent, ProfileComponent],
+  declarations: [NavigationComponent, DashboardComponent, DragdropComponent, AddressComponent],
   imports: [
     CommonModule,
+    MaterialModule,
     DashboardRoutingModule,
-    MaterialModule
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    DragDropModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }

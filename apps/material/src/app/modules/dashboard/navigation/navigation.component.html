@@ -9,7 +9,7 @@
 
       <a *ngFor="let nav of navLinks" mat-list-item [routerLink]="nav.path">
         <mat-icon class="nav-icon">{{nav.icon}}</mat-icon>
-        {{nav.label}}
+        <span class="nav-label">{{nav.label}}</span>
       </a>
 
     </mat-nav-list>
@@ -30,14 +30,12 @@
     </mat-nav-list>
   </mat-sidenav>
 
-
-
   <mat-sidenav-content>
     <mat-toolbar class="toolbar">
 
-        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async"></button>
-       <mat-icon aria-label="Side nav toggle icon" (click)="drawer.toggle()">menu</mat-icon> 
+       <mat-icon aria-label="Side nav toggle icon" (click)="drawer.toggle()">menu</mat-icon>  -->
 
         <button mat-button (click)="notification.toggle()">
             <mat-icon>notification_important</mat-icon>
@@ -61,8 +59,4 @@
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
-
-
-
-
 </mat-sidenav-container>

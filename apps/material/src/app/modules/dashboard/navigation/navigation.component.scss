@@ -1,3 +1,103 @@
-.toolbar-spacer {
-    flex: 1 1 auto;
+
+$toolbar-spacer: 1 1 auto;
+$toolbar-z-index: 3;
+$toolbar-shadow: 0px 0px 0px black;
+$toolbar-height: 60px;
+$toolbar-background: #1d355b;
+$toolbar-font-color: white;
+// ---------------------------------------------------------
+// ------------------- Varibales       ---------------------
+
+$side-navigation-height: 100%;
+$side-navigation-width: 200px;
+
+$side-nav-background-color: #1d355b;
+$side-nav-font-color: white;
+
+$sideNavigation-shadow: 2px 0px 3px black;
+
+$notification-width: 30%;
+
+// ---------------------------------------------------------
+// ------------------- Extended Clases ---------------------
+
+%nav-colors {
+    background-color: $side-nav-background-color;
 }
+
+%toolbar {
+    background-color: $toolbar-background;
+    color: $toolbar-font-color;
+    position: fixed;
+    top: 0;
+    width: calc(100% - #{$side-navigation-width});
+    z-index: $toolbar-z-index;
+    height: $toolbar-height;
+  }
+  
+// ---------------------------------------------------------
+// ------------------- Side Navigation ---------------------
+
+.sidenav-container {
+    height: $side-navigation-height;
+}
+.sideNavigation {
+    width: $side-navigation-width;
+    box-shadow: $sideNavigation-shadow; 
+    @extend %nav-colors;
+}
+.logo {
+    background-color: $side-nav-background-color;
+    color: $side-nav-font-color;
+}
+
+.navigation-list {}
+.nav-list-item {}
+
+.nav-label {
+    color: $side-nav-font-color;
+}
+.nav-icon {
+    color: $side-nav-font-color;
+}
+// ---------------------------------------------------------
+
+
+// ---------------------------------------------------------
+// ------------------- Tool Bar ----------------------------
+
+.toolbar-spacer {
+  flex: $toolbar-spacer;
+}
+
+.toolbar {
+  box-shadow: $toolbar-shadow;
+  @extend %toolbar;
+}
+
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+// ---------------------------------------------------------
+// ------------------- Content Area ----------------------------
+
+.content-area {
+    margin-top: $toolbar-height;
+}
+
+
+//----------------------------------------------------------
+//---------------- Notification  ----
+
+.notification {
+    width: $notification-width;
+    .notification-toolbar {
+      height: $toolbar-height;
+      @extend %nav-colors
+    }
+  }
+  
